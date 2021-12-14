@@ -13,6 +13,6 @@ Workshop Agenda
 10:00 - 10:30 Coffee break\
 10:30 - 11:00 Bayesian hierarchical true prevalence estimation\
 11:00 - 11:45 STOCfree model\
-11:45 - 12:00 Wrap-up & Closure\
+11:45 - 12:00 Wrap-up & Closure
 
 More information for registration can be found here: https://svepm2022.org/
