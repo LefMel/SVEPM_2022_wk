@@ -8,7 +8,7 @@ including scenario tree modelling, the STOC-free model and Bayesian hierarchical
 
 Workshop Agenda
 
-- Install/run pre-course material (available here: link to be added later)\
+Install/run pre-course material (available here: link to be added later)\
 09:00 - 09:30 Introduction (framing the problem, Terminology: Se/Sp/risk factors, prevalence)\
 09:30 - 10:00 Scenario tree analysis (before the break present apparent/true prevalence estimation with JAGS/Bayesian inference)\
 10:00 - 10:30 Coffee break\
