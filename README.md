@@ -1,4 +1,4 @@
-# SVEPM_2022_wk
+# SVEPM 2022 Workshop: Statistical methods for Substantiating freedom from infection
 
 
 Training Material for the SVEPM 2022 workshop on "Statistical methods for Substantiating freedom from infection"
