@@ -1,0 +1,58 @@
+---
+title: "Bayesian hierarchical true prevalence estimation"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+subtitle: Hands-on training - Bayesian hierarchical true prevalence estimation
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+## Apparent prevalence estimation
+
+## True prevalence estimation
+
+## Full model - Bayesian hierarchical true prevalence estimation
+
+
+## Hands-on training
+
+Now, let's go step-by-step and perform the full hierarchical model analysis using jags.
+
+Load libraries
+```{r}
+library(runjags)
+library(rjags)
+```
+
+Load the data
+```{r}
+#data <- 
+```
+
+Let's see the model
+```{r}
+#results <- runjags()
+```
+
+Run the model
+```{r}
+#results <- runjags()
+```
+
+Print the results
+```{r}
+#results <- runjags()
+```
+
+Visualize the results
+```{r}
+#results <- runjags()
+```
