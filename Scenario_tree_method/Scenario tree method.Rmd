@@ -1,0 +1,56 @@
+---
+title: "Scenario tree method"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+subtitle: Hands-on training - Scenario tree method
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+What are scenatio trees?
+
+Load libraries
+```{r}
+library(epiR)
+```
+
+Create - Plot the scenario tree
+```{r}
+```
+
+
+Load data
+```{r}
+
+```
+
+Set design prevalence
+```{r}
+```
+
+Estimate the probability of freedom from infection
+```{r}
+rsu.pfree.rs(se.p, p.intro = 0, prior = 0.5, by.time = TRUE)
+```
+
+
+Change the value of design prevalence
+```{r}
+```
+
+
+
+
+
+
+
+
+
