@@ -122,4 +122,94 @@ barplot(dbinom(0:10, 10, .2),
         xlab = "Number of test positives out of 10 animals tested")
 ```
 
+---
+## Exercise 2
 
+- Compare what happens when:
+
+ - 10 animals sampled / disease prevalence is 20%
+ - 20 animals sampled / disease prevalence is 20%
+ - 10 animals sampled / disease prevalence is 1%
+ - 20 animals sampled / disease prevalence is 1%
+
+---
+## Exercise 2
+
+```{r, fig.keep='none'}
+par(mfrow = c(2, 2))
+# n = 10, pi = 20%
+barplot(dbinom(0:10, 10, .2),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 10 animals tested",
+        main = "Prevalence = 20%")
+# n = 20, pi = 20%
+barplot(dbinom(0:10, 20, .2),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 20 animals tested",
+        main = "Prevalence = 20%")
+# n = 10, pi = 1%
+barplot(dbinom(0:10, 10, .01),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 10 animals tested",
+        main = "Prevalence = 1%")
+# n = 20, pi = 1%
+barplot(dbinom(0:10, 20, .01),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 20 animals tested",
+        main = "Prevalence = 1%")
+```
+
+---
+## Exercise 2
+
+```{r, echo = FALSE, fig.width = 10}
+par(mfrow = c(2, 2))
+barplot(dbinom(0:10, 10, .2),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 10 animals tested",
+        main = "Prevalence = 20%")
+
+barplot(dbinom(0:10, 20, .2),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 20 animals tested",
+        main = "Prevalence = 20%")
+
+barplot(dbinom(0:10, 10, .01),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 10 animals tested",
+        main = "Prevalence = 1%")
+
+barplot(dbinom(0:10, 20, .01),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 20 animals tested",
+        main = "Prevalence = 1%")
+```
+
+---
+## Exercise 3
+
+- What are the probabilities of (falsely) concluding that disease is absent when:
+ - 10 animals sampled / disease prevalence is 20%
+ - 20 animals sampled / disease prevalence is 20%
+ - 10 animals sampled / disease prevalence is 1%
+ - 20 animals sampled / disease prevalence is 1%
+
+--
+
+```{r}
+dbinom(0, 10, .2)
+dbinom(0, 20, .2)
+dbinom(0, 10, .01)
+dbinom(0, 20, .01)
+```
+
+---
+## Key messages
+
+- Probability of a false negative surveillance outcome $\nearrow$ when:
+
+ - sample size $\searrow$
+ 
+ - prevalence $\searrow$
+ 
+ 
