@@ -1,0 +1,125 @@
+---
+title: "Substantiating freedom from disease as a statistical problem"
+author: "Aurélien Madouasse & Eleftherios Meletis"
+date: "2022-03-23"
+output:
+  xaringan::moon_reader:
+    css: ["default"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle
+
+# Objective of this presentation
+
+---
+# Objective
+
+- Frame the problem of substantiating freedom from disease as a statistical problem
+
+---
+class: inverse, center, middle
+
+# Sampling for proving freedom from disease
+
+---
+## Sampling for proving freedom from disease
+
+- Evidence of infection sought by testing animals from the population of interest
+
+--
+
+ - Testing all the animals is usually too costly $\rightarrow$ sampling
+ 
+--
+
+ - $\geq 1$ (true) positive $\rightarrow$ infection is present
+ 
+--
+
+ - 0 test positive $\rightarrow$ infection is absent OR infection is present, but no infected included in the sample
+
+--
+
+
+- Most of the time, the problem consists in **quantifying the probability that the infection is not present given that it has not been detected**
+
+--
+
+- The question can be formulated as: 
+
+ - **how sure are we that the infection is truly absent given that we did not find it?** or
+
+ - **what is the probability of a false negative surveillance outcome?**
+
+---
+## Exercise 1
+
+- Consider a large population in which 20% of animals are infected
+
+- 10 animals of this population are tested with a perfect test
+
+--
+
+- What are the probabilities of getting 0 to 10 positives among 10 animals tested?
+
+ - What is the distribution to use?
+ - Which parameters?
+
+--
+
+- Assuming a large population, the probability of getting $Y = k$ positive animals out of $n$ animals tested when the disease prevalence is $\pi$ follows a Binomial distribution:
+
+$$p(Y = k) \sim Binomial(n, \pi) $$
+
+---
+## Exercise 1
+
+- Consider a large population in which 20% of animals are infected
+
+- 10 animals of this population are tested with a perfect test
+
+- What are the probabilities of getting 0 to 10 positives among 10 animals tested?
+
+ - Write the R code to display and plot the results
+
+--
+
+```{r}
+dbinom(0:10, 10, .2)
+```
+
+---
+## Exercise 1
+
+- Consider a large population in which 20% of animals are infected
+
+- 10 animals of this population are tested with a perfect test
+
+- What are the probabilities of getting 0 to 10 positives among 10 animals tested?
+
+ - Write the R code to display and plot the results
+
+```{r, fig.height = 4}
+barplot(dbinom(0:10, 10, .2))
+```
+
+---
+## Exercise 1
+
+
+```{r, fig.height = 4}
+barplot(dbinom(0:10, 10, .2),
+        names.arg = 0:10,
+        xlab = "Number of test positives out of 10 animals tested")
+```
+
+
