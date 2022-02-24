@@ -68,10 +68,14 @@ CSE_beef = 1 - (1-(p_design*Se_Blood))^n_beef
 Overall_SSE = 1 - (1-CSE_dairy)*(1-CSE_beef)
 
 ```
+
+Sensitivity ratio
 ---
 ## Estimate probability of freedom from infection
 
-
+```{r}
+P_freedom = (1-p_design)/((1-p_design) + p_design*(1-Overall_SSE))
+```
 ---
 Load libraries
 ```{r}
