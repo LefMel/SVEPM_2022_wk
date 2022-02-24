@@ -31,12 +31,21 @@ Answers to:
  II. Given that no cases have been detected, what is the probability that true infection prevalence is lower than the design prevalence?
 **Probability of freedom from infection**
 
+Principle: A surveillance system is represented as a tree with different components
 
 ---
 ## Scenario tree method - Simple Example
 
 ### Let's see a simple quick example to (i) understand scenario tree notation (ii) scenario tree calculations
 
+Objective: Freedom from BVDV in country A 
+
+The surveillance system is split between given the herd type to dairy and beef cattle.
+We assume the design prevalence is the same for both dairy and beef cattle.
+
+Given the herd type a different diagnostic method to detect infection is applied.
+Dairy - BTM
+Beef - Blood 
 
 ![](figs/simple_scenario_tree.png)
 
