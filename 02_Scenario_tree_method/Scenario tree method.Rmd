@@ -52,6 +52,27 @@ Beef - Blood
 
 
 ---
+## Estimate 
+
+``` {r}
+p_design = 0.02
+Se_BTM = 0.9
+Se_Blood = 0.95
+
+n_dairy = seq(10,400,20)
+n_beef = seq(10,600,10)
+
+CSE_dairy = 1 - (1-(p_design*Se_BTM))^n_dairy
+CSE_beef = 1 - (1-(p_design*Se_Blood))^n_beef
+
+Overall_SSE = 1 - (1-CSE_dairy)*(1-CSE_beef)
+
+```
+---
+## Estimate probability of freedom from infection
+
+
+---
 Load libraries
 ```{r}
 library(epiR)
