@@ -2,7 +2,7 @@
 title: "Pre-workshop material - Workshop SVEPM 2022 "
 author:
 - Eleftherios Meletis, Aurélien Madouasse  
-date: "`r Sys.Date()`"
+date: "2022-03-23"
 output:
   html_document:
     df_print: paged

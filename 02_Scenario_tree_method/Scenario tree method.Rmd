@@ -1,27 +1,56 @@
 ---
-title: "Scenario tree method"
-date: "`r Sys.Date()`"
+title: "Scenario Tree analysis"
+subtitle: "09:30 - 10:00"
+author: "Eleftherios Meletis, Aurélien Madouasse"
+date: "2022-03-23"
 output:
-  pdf_document: default
-  html_document:
-    df_print: paged
-subtitle: Hands-on training - Scenario tree method
-fontsize: 12pt
+  xaringan::moon_reader:
+    css: ["default"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16/9
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Introduction 
+class: inverse, center, middle
 
-What are scenatio trees?
+## Scenario tree method - Introduction
 
+Reference method to estimate the probabilities of freedom from infection from complex surveillance systems
+
+Answers to:
+ I. If infection was present at the design prevalence, what would be the probability of the surveillance system detecting at least 1 case?
+ **Surveillance sensitivity**
+
+ II. Given that no cases have been detected, what is the probability that true infection prevalence is lower than the design prevalence?
+**Probability of freedom from infection**
+
+
+---
+## Scenario tree method - Simple Example
+
+### Let's see a simple quick example to (i) understand scenario tree notation (ii) scenario tree calculations
+
+
+![](figs/simple_scenario_tree.png)
+
+
+
+---
 Load libraries
 ```{r}
 library(epiR)
 ```
 
+---
+
+## Simple example
 Create - Plot the scenario tree
 ```{r}
 ```
@@ -38,7 +67,7 @@ Set design prevalence
 
 Estimate the probability of freedom from infection
 ```{r}
-rsu.pfree.rs(se.p, p.intro = 0, prior = 0.5, by.time = TRUE)
+#rsu.pfree.rs(se.p, p.intro = 0, prior = 0.5, by.time = TRUE)
 ```
 
 
