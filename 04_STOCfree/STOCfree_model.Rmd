@@ -1,0 +1,119 @@
+---
+title: "The STOC free model"
+author: "Aurélien Madouasse & Eleftherios Meletis"
+date: "2022-03-23"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16/9
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, center, middle
+
+# Objectives of this presentation
+
+---
+# Objectives
+
+- Explain for which type of problems the model can be used
+
+- Explain the principles of the model
+
+- Use the model
+
+- Interpret the model's results
+
+---
+class: inverse, center, middle
+
+# Context
+
+---
+## Context
+
+- Disease control programmes when the disease is still present
+
+--
+
+- Objectives:
+
+ - identify infected herds
+
+ - protect uninfected herds from infection within the programme
+ 
+ - reassure trading partners from outside the programme
+ 
+--
+
+- Aim of the model:
+
+ - estimate a probability of freedom from infection for all herds in the programme incorporating all the available information
+ 
+---
+## Modelling framework
+
+- Model outcome: herd-level probability of being positive in the most recent month for which surveillance data are available
+
+--
+
+- Input data:
+
+ - test results
+ 
+ - risk factors
+ 
+--
+
+- Hidden Markov Model:
+
+ - latent status
+ 
+ - monthly dynamics
+
+--
+
+- Bayesian inference:
+
+ - requires priors
+ 
+ - modelling in Stan (or JAGS)
+
+--
+
+- Model description: https://peercommunityjournal.org/articles/10.24072/pcjournal.80/
+
+---
+## Modelling framework
+
+
+![](figs/STOCfree_modelling_framework.png)
+
+---
+## Modelling framework
+
+
+![](figs/STOCfree_test_imperfection.png)
+
+---
+## Modelling framework
+
+
+![](figs/STOCfree_infection_dynamics.png)
+
+---
+class: inverse, center, middle
+
+# Using the STOC free model
+
+---
+## Installing the STOCfree package
+
+- Model available as an R package from GitHub
