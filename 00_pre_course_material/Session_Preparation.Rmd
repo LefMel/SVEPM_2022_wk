@@ -4,9 +4,9 @@ author:
 - Eleftherios Meletis, Aurélien Madouasse  
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 subtitle: Substantiating freedom from infection -  available statistical methods to prove freedom from infection in an output-based framework
 fontsize: 12pt
 ---
@@ -24,37 +24,61 @@ set.seed(2021-09-13)
 
 This document will help you to prepare for the workshop on the available statistical methods to prove freedom from infection in an output-based framework, that will be held in the SVEPM conference on 23 March 2022. The workshop involves both demonstration and hands-on training, so it is very important that you are using a computer with the necessary software installed. All training material, presented during this workshop, will be available for download from the GitHub site, so you might find it helpful to create a GitHub account, before the workshop. The purpose of this document is to ensure that you have the necessary software installed, access to the GitHub repository, download all training material, and to give you a brief introduction in the topic of this workshop e.g., terminology etc.
 
+Required time: 2 hours
+
 
 # Software installation
 
-You need to install R (version 4.0.0 or later; preferably version 4.1.0) from https://cran.r-project.org/ and we recommend that you also use Rstudio which can be downloaded separately from https://www.rstudio.com/products/rstudio/download/
+You need to install R (version 4.0.0 or later) from https://cran.r-project.org/ and we recommend that you also use Rstudio which can be downloaded separately from https://www.rstudio.com/products/rstudio/download/
 
-Please also install the latest versions of the following R packages from CRAN (or using the install.packages() function):  tidyverse, PriorGen, rjags, runjags, coda, TeachingDemos, ggmcmc, devtools
+Please also install the latest versions of the following R packages from CRAN (or using the install.packages() function):  tidyverse, PriorGen, rjags, runjags,  posterior, coda, TeachingDemos, ggmcmc, devtools, remotes
+
+Example: Install more than one package using install.packages() function:
+``` {r, results="hide", message=FALSE}
+#install.packages(c("tidyverse", "PriorGen"))
+```
 
 You will also need the standalone JAGS software (version 4.3.0 or later) for the workshop - download the installer for your platform from here:  https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/
-
-You wil also need to install the STOCfree package from GitHub running the following code within R (or RStudio):
-```{r, results="hide", message=FALSE}
-#library(devtools)
-#install_github("AurMad/STOCfree")
-```
 
 To check that you have installed the software correctly please run the following code within R (or RStudio) and make sure that no errors are produced:
 
 ```{r, results="hide", message=FALSE}
 stopifnot(getRversion() >= "4.0.0")
-stopifnot(require('tidyverse'))
+#stopifnot(require('tidyverse'))
 stopifnot(require('PriorGen'))
 stopifnot(require('rjags'))
 stopifnot(require('runjags'))
 stopifnot(require('coda'))
 stopifnot(require('TeachingDemos'))
-stopifnot(require('ggmcmc'))
-#stopifnot(require("STOCfree"))
+#stopifnot(require('ggmcmc'))
+stopifnot(require('devtools'))
+stopifnot(require("remotes"))
 stopifnot(testjags()$JAGS.available)
 stopifnot(numeric_version(testjags()$JAGS.version) >= "4.3.0")
 stopifnot(testjags()$rjags.found)
 stopifnot(numeric_version(testjags()$rjags.version) >= "4-8")
+```
+
+
+CmdStanR, stopifnot(require('CmdStanR'))
+stopifnot(require('posterior'))
+
+Lastly, you need to install the STOCfree package and it's associated R-packages (cmdstanr, posterior) from GitHub running the following code within R (or RStudio):
+```{r, results="hide", message="FALSE"}
+remotes::install_github("stan-dev/cmdstanr")
+#install.packages("posterior")
+```
+
+
+Now you are ready to install from GitHub the STOCfree package runnig the following code within R (or RStudio) and select option 1 to install all update packages:
+```{r, results="hide", message=TRUE}
+library(devtools)
+install_github("AurMad/STOCfree")
+```
+
+Let's check is the STOCfree has been installed correctly
+```{r, results="hide", message=FALSE}
+stopifnot(require("STOCfree"))
 ```
 
 If you have any difficulties installing the software or get errors from the code above, please let us know immediately so that we can resolve these during the workshop.
