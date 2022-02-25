@@ -18,18 +18,19 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 class: inverse, center, middle
 
 ## Scenario tree method - Introduction
 
-Reference method to estimate the probabilities of freedom from infection from complex surveillance systems
+Reference quantitative method to estimate the probabilities of freedom from infection from complex surveillance systems
 
 > Answers to:
 
-* I. If infection was present at the design prevalence, what would be the probability of the surveillance system detecting at least 1 case?
+* If infection was present at the design prevalence, what would be the probability of the surveillance system detecting at least 1 case?
  **Surveillance sensitivity**
-* II. Given that no cases have been detected, what is the probability that true infection prevalence is lower than the design prevalence?
-**Probability of freedom from infection**
+* Given that no cases have been detected, what is the probability that true infection prevalence is lower than the design prevalence?
+ **Probability of freedom from infection**
 
 > Principle: A surveillance system is represented as a tree with different components
 
@@ -37,11 +38,13 @@ Reference method to estimate the probabilities of freedom from infection from co
 
 ## Scenario tree method - Simple Example
 
-#### Let's see a simple quick example that will help us understand
-(i) Scenario tree notation 
-(ii) Scenario tree calculations
+We will go through a simple example that will help understand
+* (i) Scenario tree notation 
+* (ii) Scenario tree calculations
 
-Objective: prove freedom from Bovine Viral Diarrhea virus (BVDV) in country A 
+
+
+Objective: Estimation of the probability of freedom from Bovine Viral Diarrhea virus (BVDV) in country A 
 
 ---
 
@@ -49,29 +52,32 @@ The following figure shows the structure of the surveillance system.
 
 ![](figs/simple_scenario_tree.png)
 
+---
+
 The surveillance system is split, given the herd type, to dairy and beef cattle.
+
 We assume that design prevalence is the same for both dairy and beef cattle.
 
 Given the herd type a different diagnostic method to detect infection is applied.
-Dairy - Bulk Tank Milk
-Beef - Blood  sample [e.g., serum ELISA]
+* Dairy - Bulk Tank Milk
+* Beef - Blood  sample [e.g., serum ELISA]
 
 ---
 
-## Scenatio tree notation
+## Scenario tree notation
 
-* Herd type - Risk category node
+* Herd type - (Risk) Category node
 * Herd status - Infection node
 * BTM test / Blood test - Detection node
 
 > 
-*Risk Category node - represent factors dividing the SSC population into subsets with different probabilities of being infected
+* Risk Category node - represent factors dividing the SSC population into subsets with different probabilities of being infected
 * Infection node - represent the infection status, branch probabilities derived from design prevalence [Infected - Uninfected]
 * Detection node - represent the detection of infection, associated with test characteristics [Positive - Negative] 
 
 *Branch proportions at each category node must sum to 1*
 
-Our surveillance system has two surveillance components, that are complementary.
+**Our surveillance system has two surveillance components, that are complementary**
 
 ---
 
@@ -81,13 +87,13 @@ Our surveillance system has two surveillance components, that are complementary.
 * All final results from the SS are consistent with country or zone freedom from infection
 * Specificity of the surveillance system is 100% 
 
-Complex Surveillance systems have more than one detection nodes
+Complex Surveillance systems have more than one detection nodes (see Example later)
 
 Units with a positive test outcome are retested (with a "better" method).
 
-The process of repeated testing (sequential testing)
-(I) Reduces the probability of a false-positive output in the surveillance system (Sp of SS = 1)
-(II) If a true-positive unit is detected then the country's/zone's claim freedom from infection is no longer valid and the method is no longer applicable
+>The process of repeated testing (sequential testing)
+* (I) Reduces the probability of a false-positive output in the surveillance system (Sp of SS = 1)
+* (II) If a true-positive unit is detected then the country's/zone's claim freedom from infection is no longer valid and the method is no longer applicable
 
 ---
 
@@ -112,7 +118,7 @@ Sp_BTM = 1
 Se_Blood = 0.95
 Sp_Blood = 1
 
-# Number of herds tested, per herd type
+# Number of herds tested, per herd type - different scenario given sample size
 n_dairy = seq(10,400,20)
 n_beef = seq(10,600,10)
 ```
@@ -143,12 +149,14 @@ $$
 Pr_freedom = Pr(D^- | S^-) = Negative  Predictive  Value
 $$
 Using Bayes rule
+
 $$
 Pr_freedom = Pr(D^- | S^-) = \frac{Pr(S^- | D^-) Pr(D^-) )}{Pr(S^-)} = \frac{Pr(S^- | D^-) Pr(D^-) )}{Pr(S^- | D^-) Pr(D^-) + Pr(S^-|D^+)*Pr(D^+)} =
 \frac{Sp_SS * (1-p^*)}{Sp_SS * (1-p^*) + (1 - Se_SS)*P^*}
 $$
 
 We assume that Sp_SS = 1 then
+
 $$
 Pr_freedom = Pr(D^- | S^-)=
 \frac{(1-p^*)}{(1-p^*) + (1 - Se_SS)*P^*}
@@ -160,39 +168,44 @@ P_freedom = (1-p_design)/((1-p_design) + p_design*(1-Overall_SSE))
 
 ---
 
+## Another example - Exercise
+
+### Introducing the Adjusted risk
+
+Suppose the following scenario
+
+SS for BVDV
+Country X has 2 regions - herds divided by herd type to beef and dairy cattle
+
+Dairy cattle tested by BTM - if positive retested 
+Beef cattle tested with ELISA - if positive retested
+
+Region 2 is sharing borders with a country that is known to be BVDV-positive - higher risk
+Relative_risk(region_2) = 4*Relative_risk(region_1) = 4
+Relative_risk(region_1) = 1
+
+80% of the herds belong to Region 1
+20% of the herds belong to Region 2
+
+Herd type > 40% beef, 60% dairy cattle
+
+Design prevalence = 0.02
+
+
+---
+
+## If we have time - explain p_Intro
+---
+
+## Packages appliying the scenario method
 Load libraries
 ```{r}
 library(epiR)
 ```
 
----
-
-## Simple example
-Create - Plot the scenario tree
-```{r}
-```
-
-
-Load data
-```{r}
-
-```
-
-Set design prevalence
-```{r}
-```
-
-Estimate the probability of freedom from infection
 ```{r}
 #rsu.pfree.rs(se.p, p.intro = 0, prior = 0.5, by.time = TRUE)
 ```
-
-
-Change the value of design prevalence
-```{r}
-```
-
-
 
 
 

@@ -22,6 +22,7 @@ class: center, middle, inverse, title-slide
 
 
 
+
 class: inverse, center, middle
 
 ## Scenario tree method - Introduction
@@ -31,9 +32,9 @@ Reference method to estimate the probabilities of freedom from infection from co
 &gt; Answers to:
 
 * I. If infection was present at the design prevalence, what would be the probability of the surveillance system detecting at least 1 case?
- **Surveillance sensitivity**
+ &lt;font size="6"&gt; Surveillance sensitivity&lt;/font&gt;
 * II. Given that no cases have been detected, what is the probability that true infection prevalence is lower than the design prevalence?
-**Probability of freedom from infection**
+ &lt;font size="6&gt; Probability of freedom from infection&lt;/font&gt;
 
 &gt; Principle: A surveillance system is represented as a tree with different components
 
@@ -53,6 +54,8 @@ The following figure shows the structure of the surveillance system.
 
 ![](figs/simple_scenario_tree.png)
 
+---
+
 The surveillance system is split, given the herd type, to dairy and beef cattle.
 We assume that design prevalence is the same for both dairy and beef cattle.
 
@@ -69,7 +72,7 @@ Beef - Blood  sample [e.g., serum ELISA]
 * BTM test / Blood test - Detection node
 
 &gt; 
-*Risk Category node - represent factors dividing the SSC population into subsets with different probabilities of being infected
+* Risk Category node - represent factors dividing the SSC population into subsets with different probabilities of being infected
 * Infection node - represent the infection status, branch probabilities derived from design prevalence [Infected - Uninfected]
 * Detection node - represent the detection of infection, associated with test characteristics [Positive - Negative] 
 
@@ -136,7 +139,6 @@ $$
 
 
 ```r
-#Sensitivity ratio
 CSE_dairy = 1 - (1-(p_design*Se_BTM))^n_dairy
 CSE_beef = 1 - (1-(p_design*Se_Blood))^n_beef
 
@@ -145,6 +147,23 @@ Overall_SSE = 1 - (1-CSE_dairy)*(1-CSE_beef)
 
 ---
 ## Estimate probability of freedom from infection
+
+$$
+Pr_freedom = Pr(D^- | S^-) = Negative  Predictive  Value
+$$
+Using Bayes rule
+
+$$
+Pr_freedom = Pr(D^- | S^-) = \frac{Pr(S^- | D^-) Pr(D^-) )}{Pr(S^-)} = \frac{Pr(S^- | D^-) Pr(D^-) )}{Pr(S^- | D^-) Pr(D^-) + Pr(S^-|D^+)*Pr(D^+)} =
+\frac{Sp_SS * (1-p^*)}{Sp_SS * (1-p^*) + (1 - Se_SS)*P^*}
+$$
+
+We assume that Sp_SS = 1 then
+
+$$
+Pr_freedom = Pr(D^- | S^-)=
+\frac{(1-p^*)}{(1-p^*) + (1 - Se_SS)*P^*}
+$$
 
 
 ```r
