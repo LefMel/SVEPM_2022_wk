@@ -39,7 +39,7 @@ class: inverse, center, middle
 ---
 ## Context
 
-- Disease control programmes when the disease is still present
+- Disease surveillance programmes when the disease is still present
 
 --
 
