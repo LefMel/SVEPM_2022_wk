@@ -186,15 +186,20 @@ library(ggplot2)
 
 - The package contains a toy dataset called `herdBTM` that we will use for demonstrating how to use the model
 
-```{r, echo = FALSE}
-herdBTM %>% 
-  filter(Test == "BTM_ODR")
-```
+--
 
 - Mimics what is done in some BVD surveillance programmes in French dairy herds:
 
  - BVDV specific antibodies are sought in a bulk tank milk sample
  - All herds in the programme are tested twice a year
+
+--
+
+```{r, echo = FALSE}
+herdBTM %>% 
+  filter(Test == "BTM_ODR")
+```
+
 
 ---
 ## BVDV surveillance dataset
@@ -319,6 +324,7 @@ plot_priors_tests(sfd)
 ## Prior distributions for infection dynamics
 
 - Prior distributions must be provided for:
+
  - the probability of being positive ( $\pi_1$ )
  - the probability of becoming positive between consecutive months ( $\tau_1$ )
  - the probability of remaining positive between consecutive months ( $\tau_2$ )
@@ -346,6 +352,14 @@ plot_priors_tests(sfd)
  
 - the logit transformation is as follows: 
 $$logit(p) = ln \left( \frac{p} {1 - p} \right) $$
+
+--
+
+- the logit transformation allows to use distributions defined on ( $- \infty, + \infty$ )
+
+- a value of 0 on the logit scale corresponds to a probability of 0.5
+
+- the function is symmetric around 0
 
 ---
 ## Prior distributions for infection dynamics
