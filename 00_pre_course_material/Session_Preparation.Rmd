@@ -4,9 +4,9 @@ author:
 - Eleftherios Meletis, Aurélien Madouasse  
 date: "2022-03-23"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 urlcolor: blue
 subtitle: Substantiating freedom from infection -  available statistical methods to prove freedom from infection in an output-based framework
 fontsize: 12pt
@@ -59,7 +59,7 @@ stopifnot(numeric_version(testjags()$rjags.version) >= "4-8")
 ```
 
 
-Lastly, you will need to install the `STOCfree package` and it's associated R-packages (`CmdStanR`, `posterior`). The `CmdStanR` R-package is not available to install from CRAN, so we will install it from GitHub using the `remotes` package. The `posterior` package can be installed with the `install.packages()` function.
+Lastly, you will need to install the `STOCfree package` and it's associated R-packages (`tidyverse`, `CmdStanR`, `posterior`). The `CmdStanR` R-package is not available to install from CRAN, so we will install it from GitHub using the `remotes` package. The `posterior` package can be installed with the `install.packages()` function.
 
 ## 2nd Milestone
 Execute the following R-commands to install the `tidyverse`, `CmdStanR` and `posterior` packages. 
