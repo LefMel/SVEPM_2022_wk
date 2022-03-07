@@ -37,6 +37,18 @@ class: inverse, center, middle
 # Context
 
 ---
+class: center, middle
+
+## The STOC free project: [www.stocfree.eu](https://www.stocfree.eu/)
+
+![](figs/STOCfree_aims.png)
+
+
+---
+
+background-image: url("figs/STOCfree_partners.png")
+
+---
 ## Context
 
 - Disease surveillance programmes when the disease is still present
@@ -74,9 +86,12 @@ class: inverse, center, middle
 
 - Hidden Markov Model:
 
+ - imperfect tests
+
  - latent status
  
  - monthly dynamics
+ 
 
 --
 
@@ -315,7 +330,7 @@ show_tests(sfd)
 
 - Display your prior distributions:
 
-```{r, fig.height = 6, fig.width = 9}
+```{r, fig.height = 6, fig.width = 9, fig.align='center'}
 plot_priors_tests(sfd)
 ```
 
@@ -417,7 +432,7 @@ sfd <- set_priors_status_dyn(sfd,
 ---
 ## Prior distributions for infection dynamics
 
-```{r, fig.height=6.5}
+```{r, fig.height=6.5, fig.align='center'}
 plot_priors_status_dyn(sfd)
 ```
 
@@ -527,4 +542,63 @@ plot(pred, herd = c("FR001", "FR002"), type = "individual", legend = TRUE)
 ```{r}
 summary(pred, herd = paste0("FR00", 1:9))
 ```
+
+---
+## Analysing the results - predicted probabilities
+
+
+- The choice of which herds to categorise as *free from infection* is left to the user
+
+ - e.g. we want to be 97.5% sure that the probability of infection is smaller or equal to 10%
+ 
+```{r}
+as_tibble(summary(pred)) %>% 
+  filter(`97.5%` <= .1) 
+```
+ 
+---
+class: inverse, center, middle
+
+# Including risk factors
+
+---
+## Including risk factors
+
+- The STOC free model allows the inclusion of risk factors of new infection
+
+--
+
+ - logistic regression model for the probability of new infection $\tau_1$
+ - associations estimated from historical data
+ - requires priors on the regression coefficients
+ 
+--
+
+- allows the probability of freedom from infection to be higher in herds in which known risk factors of infection are present
+
+--
+
+- could be used to trigger testing in these herds
+
+---
+## Including risk factors - example from the paper
+
+.center[![](figs/risk_factor_intro.png)]
+
+
+---
+## Including risk factors - example from the paper
+
+.center[![](figs/risk_factor_intro_examples.png)]
+
+---
+## Including risk factors
+
+- See the [Github page](https://github.com/AurMad/STOCfree) in order to see how to include risk factors
+
+---
+class: inverse, center, middle
+
+# Thank you !
+
 
