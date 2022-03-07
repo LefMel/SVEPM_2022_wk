@@ -63,7 +63,7 @@ Lastly, you will need to install the `STOCfree package` and it's associated R-pa
 
 ## 2nd Milestone
 Execute the following R-commands to install the `tidyverse`, `CmdStanR` and `posterior` packages. 
-(Copy the two lines of code, below, without the # symbol)
+(Execute the following lines of code without the # symbol)
 ```{r, results="hide", message=FALSE}
 #remotes::install_github("r-lib/rlang")
 #install.packages("tidyverse")
@@ -109,7 +109,7 @@ If you are already familiar with GitHub you can clone the repository and fetch t
 
 # Topics of this Workshop
 
-The aim of this pre-workshop material is to introduce the basics of the current statistical methods to prove freedom from infection in an output-based framework, that we will work on during the workshop. The text and code below are designed so that you can become familiar both with the terminology and the methods that will be presented during the workshop. The workshop is designed to have both demonstration and hands-on teaching. We have an introductory presentation to describe the concept of freedom from infection. Afterwards we describe three main methods that are used or have the potential to be used for substantiating freedom from infection. For each method we will go over the key points and line-by-line the associated R-code chunks. Some basic knowledge R is assumed for this workshop. 
+The aim of this workshop is to introduce the relevant concepts of proving disease freedom and provide hands-on training on the current statistical methods. The text and code below are designed so that you can become familiar both with the terminology and the methods that will be presented during the workshop. The workshop is designed to have both demonstration and hands-on teaching. We have an introductory presentation to describe the concept of freedom from infection. Afterwards we describe three main methods that are used or have the potential to be used for substantiating freedom from infection. For each method we will go over the key points and line-by-line the associated R-code chunks. Some basic knowledge of R is assumed for this workshop. 
 
 # Optional Exercise - Substantiating freedom from infection as a statistical problem
 
