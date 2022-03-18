@@ -4,9 +4,9 @@ author: "Eleftherios Meletis & Aurélien Madouasse"
 date: "2022-03-23"
 geometry: "left=1cm,right=0.2cm,top=0.5cm,bottom=0.5cm"
 output:
-  beamer_presentation: default
   slidy_presentation: default
    
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -53,7 +53,7 @@ Where:
 
 * P($\theta$): Prior probability of parameter(s) of interest;
 * P(y/$\theta$): Likelihood of the data given the parameters value(s) 
-* P($\theta$|y): Posterior probability of parameter(s) of interest given the data and the priors
+* P($\theta$|y): Posterior probability of parameter(s) of interest given the data and the prior
 
 ## Bayesian Inference - Summary & Example
 
@@ -261,14 +261,40 @@ psi = list(chain1=0.5)
 ```
 
 ## Run the model
-```{r, echo=TRUE, include=TRUE, warning=FALSE, cache=FALSE, message=FALSE}
-hier_model <- run.jags("hier_model.txt",data=hier_data)
+```{r, echo=FALSE, include=FALSE, warning=FALSE, cache=FALSE, message=FALSE}
+hier_model <- run.jags("hier_model.txt",data=hier_data,
+                       burnin=5000, sample=10000)
 ```
 
-```{r, echo=TRUE, include=TRUE, warning=FALSE, cache=FALSE, message=FALSE}
+```{r, echo=FALSE, include=FALSE, warning=FALSE, cache=FALSE, message=FALSE}
 res <- summary(hier_model)
 ```
 
-## Visualise results
+## Visualise results (I)
 
+### ap & tp in each herd
 
+```{r, include=FALSE}
+## Code for plots
+```
+
+![](figs/app_p-animal_p.png)
+
+## Visualise results (II)
+
+![](figs/app_p-animal_p-zoomed.png)
+
+## Visualise results (III)
+
+### Herd-level prevalence in each region
+
+![](figs/herd_p.png)
+
+## Conclusions
+
+* Questions???
+
+Suggested literature
+
+* Kostoulas et al, (2019) Harmonisation Of Transmissible disease Interpretation in the EU  HOTLINE
+* Branscum et al, (2004) Bayesian modeling of animal- and herd-level prevalences
