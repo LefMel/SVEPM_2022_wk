@@ -3,8 +3,8 @@ title: "Scenario tree method"
 author: "Eleftherios Meletis & Aurélien Madouasse"
 date: '2022-03-23'
 output:
-  slidy_presentation: default
   beamer_presentation: default
+  slidy_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -142,13 +142,13 @@ Sensitivity_ratio = CSE_dairy/CSE_beef
 ## Estimate probability of freedom from infection
 
 \begin{block}{Pr(freedom)}
-  pr(freedom) = Pr(D- | S-) = Negative Predictive Value
+  Pr(freedom) = Pr(D- | S-) = Negative Predictive Value
   \begin{equation}
   \begin{aligned}
   \begin{split}
   &Pr_f = Pr(D^- | S^-) = \frac{Pr(S^- | D^-) Pr(D^-))}{Pr(S^-)} =\\
   &\frac{Pr(S^- | D^-) Pr(D^-) )}{Pr(S^- | D^-) Pr(D^-) + Pr(S^-|D^+)*Pr(D^+)}\\ 
-  &= \frac{Sp_S * (1-p^*)}{Sp_SS * (1-p^*) + (1 - Se_SS)*P^*}\\
+  &= \frac{Sp_S * (1-p^*)}{Sp_S * (1-p^*) + (1 - Se_S)*p^*}\\
   \end{split}
   \end{aligned}
   \end{equation}
@@ -253,7 +253,7 @@ AR_2 = RR_2 * AR_1
 
 !!! As a last step we have to adjust for the design prevalence
 
-The output is defined as Effective Probability of infection (EPI) is equal to
+The output defined as Effective Probability of infection (EPI) is equal to
 
 \begin{block}{Formula}
   \begin{equation}
@@ -269,7 +269,7 @@ EPI_2 = AR_2*p_design
 
 ## Repeated testing
 
-As pointed out if an unit tests positive in the first round of testing then it is retested with the same test.
+As pointed out if a unit tests positive in the first round of testing then it is retested with the same test.
 
 Assuming independence between tests the overall sensitivity of the sequential testing is the product of the individual sensitivities
 

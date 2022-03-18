@@ -311,14 +311,14 @@ Given the herd type a different diagnostic method to detect infection is applied
 <div id="effective-probability-of-infection" class="slide section level2">
 <h1>Effective probability of infection</h1>
 <p>!!! As a last step we have to adjust for the design prevalence</p>
-<p>The output is defined as Effective Probability of infection (EPI) is equal to</p>
+<p>The output defined as Effective Probability of infection (EPI) is equal to</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p_design <span class="ot">=</span> <span class="fl">0.02</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>EPI_1 <span class="ot">=</span> AR_1<span class="sc">*</span>p_design</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>EPI_2 <span class="ot">=</span> AR_2<span class="sc">*</span>p_design</span></code></pre></div>
 </div>
 <div id="repeated-testing" class="slide section level2">
 <h1>Repeated testing</h1>
-<p>As pointed out if an unit tests positive in the first round of testing then it is retested with the same test.</p>
+<p>As pointed out if a unit tests positive in the first round of testing then it is retested with the same test.</p>
 <p>Assuming independence between tests the overall sensitivity of the sequential testing is the product of the individual sensitivities</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Test characteristics</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># BTM test</span></span>
