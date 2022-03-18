@@ -1,0 +1,35 @@
+---
+title: "Workshop Conclusios"
+author: "Eleftherios Meletis & Aurélien Madouasse"
+date: '2022-03-23'
+output:
+  slidy_presentation: default
+  beamer_presentation: default
+---
+
+
+## Take-Home message
+
+### Prevalence Context
+ 
+Methods for freedom from infection can be adopted to each particular context
+
+* Absence of infection is known/suspected: Scenario tree method 
+
+Simulations based on hypotheses
+
+* Presence of infection is known/suspected: Bayesian hierarchical true prevalence estimation, STOC free model 
+
+Bayesian Inference
+
+
+## Link for recorded material
+
+## Thank you all - Group Photo
+
+![](figs/sound-control.png){width=3in} 
+
+\vspace{1cm}
+
+![](figs/harmony.jpg){width=3in} 
+
