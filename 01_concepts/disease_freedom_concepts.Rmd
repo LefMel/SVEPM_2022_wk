@@ -1,5 +1,6 @@
 ---
 title: "Substantiating freedom from disease as a statistical problem"
+subtitle: "Core concepts"
 author: "Aurélien Madouasse & Eleftherios Meletis"
 date: "2022-03-23"
 output:
@@ -19,12 +20,18 @@ options(htmltools.dir.version = FALSE)
 
 class: inverse, center, middle
 
-# Objective of this presentation
+# Objectives of this presentation
 
 ---
-# Objective
+# Objectives
 
-- Frame the problem of substantiating freedom from disease as a statistical problem
+- Define the problem of substantiating freedom from disease as a statistical problem
+
+- List the main factors to take into account when assessing confidence in freedom
+
+- Define the most important surveillance outputs to estimate when substantiating freedom from disease
+
+- Define and explain the relevance of the design prevalence
 
 ---
 class: inverse, center, middle
@@ -44,8 +51,6 @@ class: inverse, center, middle
 
  - $\geq 1$ (true) positive $\rightarrow$ infection is present
  
---
-
  - 0 test positive $\rightarrow$ infection is absent OR infection is present, but no infected included in the sample
 
 --
@@ -72,7 +77,8 @@ class: inverse, center, middle
 
 - What are the probabilities of getting 0 to 10 positives among 10 animals tested?
 
- - What is the distribution to use?
+ - What is the statistical distribution to use?
+ 
  - Which parameters?
 
 --
@@ -138,22 +144,22 @@ barplot(dbinom(0:10, 10, .2),
 
 ```{r, fig.keep='none'}
 par(mfrow = c(2, 2))
-# n = 10, pi = 20%
+# n = 10, p = 20%
 barplot(dbinom(0:10, 10, .2),
         names.arg = 0:10,
         xlab = "Number of test positives out of 10 animals tested",
         main = "Prevalence = 20%")
-# n = 20, pi = 20%
+# n = 20, p = 20%
 barplot(dbinom(0:10, 20, .2),
         names.arg = 0:10,
         xlab = "Number of test positives out of 20 animals tested",
         main = "Prevalence = 20%")
-# n = 10, pi = 1%
+# n = 10, p = 1%
 barplot(dbinom(0:10, 10, .01),
         names.arg = 0:10,
         xlab = "Number of test positives out of 10 animals tested",
         main = "Prevalence = 1%")
-# n = 20, pi = 1%
+# n = 20, p = 1%
 barplot(dbinom(0:10, 20, .01),
         names.arg = 0:10,
         xlab = "Number of test positives out of 20 animals tested",
@@ -254,7 +260,7 @@ $$SSe =  1 - p(Y = 0 |n, \pi)$$
 
 - The specificity of surveillance is usually not a problem because all positive test results will be re-tested until either being confirmed as true positives or shown to be false positives
 
-$$SSp = p(\pi > 0 | Y > 0) = 1 $$
+$$SSp = p(Y = 0 | \pi = 0) = 1 $$
 
 --
 
@@ -409,7 +415,9 @@ magick::image_read_pdf("./figs/tab_error_3.pdf")
 
  - Influence on the cost of error $\rightarrow$ the longer the time between introduction of infection, the higher the resulting costs
 
-![](figs/outputs.png)
+<img src="figs/outputs.png"
+     width="950px" height="450px">
+
 
 ---
 class: inverse, center, middle
