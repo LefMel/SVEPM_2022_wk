@@ -55,7 +55,7 @@ background-image: url("figs/STOCfree_partners.png")
 
 --
 
-- Objectives:
+- **Objectives:**
 
  - identify infected herds
 
@@ -65,7 +65,7 @@ background-image: url("figs/STOCfree_partners.png")
  
 --
 
-- Aim of the model:
+- **Aim of the model:**
 
  - estimate a probability of freedom from infection for all herds in the programme incorporating all the available information
  
@@ -151,7 +151,7 @@ class: inverse, center, middle
 ---
 ## Computer programme for Bayesian inference
 
-- The STOCfree package can use either Stan or JAGS to perform Bayesian inference
+- The `STOCfree` package can use either Stan or JAGS to perform Bayesian inference
 
 --
 
@@ -167,7 +167,7 @@ class: inverse, center, middle
  
  - Uses Hamiltonian Monte Carlo for estimation $\rightarrow$ more efficient than older methods of sampling
  
- - The STOCfree package uses the CmdStan version of Stan
+ - The `STOCfree` package uses the CmdStan version of Stan
  
  - [Getting started with CmdStanR](https://mc-stan.org/cmdstanr/articles/cmdstanr.html)
  
@@ -419,7 +419,7 @@ logitnormdistapp::shiny_logitnorm()
 
 --
 
-- Set the priors for the test characteristics
+- Set the priors for the test characteristics:
 
 ```{r}
 sfd <- set_priors_status_dyn(sfd, 
