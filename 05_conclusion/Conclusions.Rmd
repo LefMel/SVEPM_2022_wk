@@ -1,10 +1,10 @@
 ---
-title: "Workshop Conclusios"
+title: "Workshop Conclusions"
 author: "Eleftherios Meletis & Aurélien Madouasse"
 date: '2022-03-23'
 output:
-  slidy_presentation: default
   beamer_presentation: default
+  slidy_presentation: default
 ---
 
 
@@ -14,16 +14,20 @@ output:
  
 Methods for freedom from infection can be adopted to each particular context
 
-* Absence of infection is known/suspected: Scenario tree method 
+* Absence of infection is assumed: Scenario tree method 
 
 Simulations based on hypotheses
 
-* Presence of infection is known/suspected: Bayesian hierarchical true prevalence estimation, STOC free model 
+* Presence of infection is assumed: Bayesian hierarchical true prevalence estimation, STOC free model 
 
 Bayesian Inference
 
 
-## Link for recorded material
+## Mentimeter
+
+[Mentimeter Link](https://www.menti.com)
+
+Mentimeter Code: 1474 6987
 
 ## Thank you all - Group Photo
 
