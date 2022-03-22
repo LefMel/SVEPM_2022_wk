@@ -1,0 +1,41 @@
+---
+title: "Workshop SVEPM 2022"
+author: "Eleftherios Meletis & Aurélien Madouasse"
+date: '2022-03-23'
+site: distill::distill_website
+description: |
+  Substantiating freedom from infection -  available statistical methods to prove freedom from infection in an output-based framework
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.preserve.raw = FALSE)
+```
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Substantiating freedom from infection -  available statistical methods to prove freedom from infection in an output-based framework",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "LefMel/SVEPM_2022_wk")
+```
+
+
+# Workshop Agenda
+
+- 09:00 - 09:30 Introduction (framing the problem, Terminology: Se/Sp/risk factors, prevalence)
+- 09:30 - 10:00 Scenario tree analysis (scenario tree notation & calculations, simple example)
+ - 10:00 - 10:30 Coffee break
+- 10:30 - 11:00 Bayesian hierarchical true prevalence estimation (apparent/true prevalence estimation with JAGS/Bayesian inference, explain full hierarchical model)
+- 11:00 - 11:45 STOCfree model
+- 11:45 - 12:00 Wrap-up & Closure
+
+# Slides
+
+- Introduction [Slides](https://github.com/LefMel/SVEPM_2022_wk/blob/main/01_concepts/disease_freedom_concepts.html)
+- Scenario tree method [Slides](https://htmlpreview.github.io/?https://github.com/LefMel/SVEPM_2022_wk/blob/main/02_Scenario_tree_method/Scenario-tree-method.html)
+- Bayesian hierarchical true prevalence estimation [Slides](https://htmlpreview.github.io/?https://github.com/LefMel/SVEPM_2022_wk/blob/main/03_Bayesian_Hierarchical/bayes_prev.html)
+- STOCfree model [Slides](https://github.com/LefMel/SVEPM_2022_wk/blob/main/04_STOCfree/STOCfree_model.html)
+- Conclusions [Slides](https://htmlpreview.github.io/?https://github.com/LefMel/SVEPM_2022_wk/blob/main/05_conclusion/Conclusions.html)
