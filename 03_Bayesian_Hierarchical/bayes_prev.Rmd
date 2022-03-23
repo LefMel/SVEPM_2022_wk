@@ -4,9 +4,9 @@ author: "Eleftherios Meletis & Aurélien Madouasse"
 date: "2022-03-23"
 geometry: "left=1cm,right=0.2cm,top=0.5cm,bottom=0.5cm"
 output:
+  beamer_presentation: default
   slidy_presentation: default
    
-  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -263,7 +263,7 @@ psi = list(chain1=0.5)
 ## Run the model
 ```{r, echo=FALSE, include=FALSE, warning=FALSE, cache=FALSE, message=FALSE}
 hier_model <- run.jags("hier_model.txt",data=hier_data,
-                       burnin=5000, sample=10000)
+                       burnin=5000, sample=25000)
 ```
 
 ```{r, echo=FALSE, include=FALSE, warning=FALSE, cache=FALSE, message=FALSE}
